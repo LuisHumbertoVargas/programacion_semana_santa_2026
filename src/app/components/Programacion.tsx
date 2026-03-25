@@ -146,13 +146,13 @@ export function Programacion() {
           <div className="relative">
             <div className="w-48 h-[1px] bg-gradient-to-r from-transparent via-purple-400/40 to-transparent mx-auto mb-12 shadow-lg shadow-purple-400/20" />
             <div className="max-w-2xl mx-auto">
-              <p className="text-purple-100/70 text-xl italic mb-8 leading-relaxed" style={{ fontFamily: 'Cormorant Garamond, serif', fontWeight: 300 }}>
+              <h3 className="text-purple-100/70 text-xl italic mb-8 leading-relaxed" style={{ fontFamily: 'Cormorant Garamond, serif', fontWeight: 300 }}>
                 "Y al tercer día resucitó de entre los muertos"
-              </p>
+              </h3>
               <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-purple-400/30 to-transparent mx-auto mb-8" />
-              <p className="text-purple-200/60 text-base leading-relaxed" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}>
-                Los horarios pueden estar sujetos a cambios. Consulte con su parroquia local.
-              </p>
+              <span className="text-purple-200/60 text-base leading-relaxed" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300 }}>
+                © 2026 Todos los derechos reservados.
+              </span>
             </div>
           </div>
         </motion.div>
