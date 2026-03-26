@@ -39,17 +39,17 @@ export function EventCard({ evento, index }: EventCardProps) {
         >
           <div className="aspect-[4/3] relative group">
             {/* Image with enhanced effects */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-black/40 z-10" />
+            <div className="absolute inset-0 bg-gradient-to-br to-black/5 z-10" />
             <img
               src={evento.imagen}
               alt={evento.dia}
               className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 group-hover:brightness-75"
-              style={{ filter: 'contrast(1.1) saturate(1.2)' }}
+              style={{ filter: 'contrast(1.1) saturate(1.2)', objectPosition: '50% 55%' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-purple-900/40 to-transparent z-20" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-purple-900/20 to-transparent z-20" />
             
             {/* Subtle animated overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-transparent to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-transparent opacity-0 group-hover:opacity-0 transition-opacity duration-700 z-30" />
           </div>
         </motion.div>
 
