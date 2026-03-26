@@ -28,7 +28,7 @@ export function EventCard({ evento, index }: EventCardProps) {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="relative"
     >
-      <div className={`grid md:grid-cols-2 gap-8 items-center ${
+      <div className={`grid md:grid-cols-2 gap-4 md:gap-8 items-center max-w-full ${
         index % 2 === 0 ? '' : 'md:grid-flow-dense'
       }`}>
         {/* Image */}
@@ -37,7 +37,7 @@ export function EventCard({ evento, index }: EventCardProps) {
           whileTap={{ scale: 0.98 }}
           className={`relative overflow-hidden rounded-2xl ${index % 2 === 0 ? '' : 'md:col-start-2'} shadow-2xl`}
         >
-          <div className="aspect-[4/3] relative group">
+          <div className="aspect-[5/4] relative group">
             {/* Image with enhanced effects */}
             <div className="absolute inset-0 bg-gradient-to-br to-black/5 z-10" />
             <img
@@ -54,7 +54,7 @@ export function EventCard({ evento, index }: EventCardProps) {
         </motion.div>
 
         {/* Content */}
-        <div className={`${index % 2 === 0 ? '' : 'md:col-start-1 md:row-start-1'} px-4`}>
+        <div className={`${index % 2 === 0 ? '' : 'md:col-start-1 md:row-start-1'} px-2 md:px-4`}>
           <div className="space-y-6">
             {/* Día y Fecha */}
             <div>

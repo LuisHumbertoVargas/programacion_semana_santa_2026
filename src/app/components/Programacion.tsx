@@ -86,7 +86,7 @@ export function Programacion() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#120820] via-[#1a0f30] to-[#120820]">
+    <div className="min-h-screen bg-gradient-to-b from-[#120820] via-[#1a0f30] to-[#120820] overflow-x-hidden">
       {/* Header */}
       <div className="relative bg-gradient-to-r from-black/60 via-purple-900/20 to-black/60 border-b border-purple-500/20 backdrop-blur-md">
         <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-transparent" />
@@ -111,7 +111,7 @@ export function Programacion() {
           >
             <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-purple-400/60 to-transparent mx-auto mb-8 shadow-lg shadow-purple-400/30" />
             <h1 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-purple-50/95 mb-6 tracking-[0.15em] uppercase"
+              className="text-4xl max-[420px]:text-3xl max-[336px]:text-[1.72rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-purple-50/95 mb-6 tracking-[0.15em] uppercase"
               style={{ 
                 fontFamily: 'Cormorant Garamond, serif',
                 fontWeight: 200,
@@ -133,7 +133,7 @@ export function Programacion() {
       </div>
 
       {/* Timeline */}
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-20">
         <div className="relative">
           {/* Vertical timeline line */}
           {/* <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-purple-500/30 via-purple-400/20 to-purple-500/30" /> */}
