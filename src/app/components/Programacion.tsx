@@ -1,7 +1,17 @@
+/// <reference types="vite/client" />
+
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router';
 import { ArrowLeft, Cross, Flame, Church, Heart, Sun } from 'lucide-react';
 import { EventCard } from './EventCard';
+
+import domingo_de_ramos from '../../assets/images/domingo_de_ramos.jpg';
+import martes_santo from '../../assets/images/martes_santo.jpg';
+import miercoles_santo from '../../assets/images/miercoles_santo.jpg';
+import jueves_santo from '../../assets/images/jueves_santo.jpg';
+import viernes_santo from '../../assets/images/viernes_santo.jpg';
+import sabado_santo from '../../assets/images/sabado_santo.jpg';
+import domingo_de_resurreccion from '../../assets/images/domingo_de_resurreccion.jpg';
 
 const eventos = [
   {
@@ -10,7 +20,7 @@ const eventos = [
     fecha: '29 de Marzo',
     descripcion: 'Conmemora la entrada triunfal de Jesús en Jerusalén.',
     horarios: ['9:00 AM - Bendición de Ramos', '9:00 AM - Santa Misa'],
-    imagen: '/src/assets/images/domingo_de_ramos.jpg',
+    imagen: domingo_de_ramos,
     icono: Church,
   },
   {
@@ -19,7 +29,7 @@ const eventos = [
     fecha: '31 de Marzo',
     descripcion: 'Día de reflexión y recogimiento.',
     horarios: ['9:00 AM - Santa Misa', '9:00 AM - Sacramento de la Confesión'],
-    imagen: '/src/assets/images/martes_santo.jpg',
+    imagen: martes_santo,
     icono: Heart,
   },
   {
@@ -28,7 +38,7 @@ const eventos = [
     fecha: '1 de Abril',
     descripcion: 'Día de preparación para los misterios pascuales.',
     horarios: ['9:00 AM - Santa Misa', '9:00 AM - Sacramento de la Confesión'],
-    imagen: '/src/assets/images/miercoles_santo.jpg',
+    imagen: miercoles_santo,
     icono: Cross,
   },
   {
@@ -37,7 +47,7 @@ const eventos = [
     fecha: '2 de Abril',
     descripcion: 'Institución de la Eucaristía y Lavatorio de pies.',
     horarios: ['7:30 PM - Misa en recuerdo de la Cena del Señor', '7:30 PM - Lavatorio de los pies', '7:30 PM - Mandamiento del amor', '7:30 PM - Procesión al Monumento', '9:00 PM - Hora Santa por turnos de Adoración', '11:00 PM - Getsemani en el monumento Eucarístico'],
-    imagen: '/src/assets/images/jueves_santo.jpg',
+    imagen: jueves_santo,
     icono: Flame,
     destacado: true,
   },
@@ -47,7 +57,7 @@ const eventos = [
     fecha: '3 de Abril',
     descripcion: 'Pasión y Muerte del Señor.',
     horarios: ['9:00 AM - Via Crucis', '3:00 PM - Liturgia de la Pasión del Señor', '3:00 PM - Sermón de las 7 palabras', '3:00 PM - Sagrada comunión', '3:00 PM - Adoración de la Santa Cruz', '3:00 PM - Procesión al Santo Sepulcro'],
-    imagen: '/src/assets/images/viernes_santo.jpg',
+    imagen: viernes_santo,
     icono: Cross,
     destacado: true,
   },
@@ -57,7 +67,7 @@ const eventos = [
     fecha: '4 de Abril',
     descripcion: 'Vigilia Pascual y preparación para la Resurrección.',
     horarios: ['9:00 AM - Siete Dolores de la Santísima Virgen María', '9:00 PM - Bendición del fuego', '10:30 PM - Vigilia de Pascua de Resurrección'],
-    imagen: '/src/assets/images/sabado_santo.jpg',
+    imagen: sabado_santo,
     icono: Flame,
   },
   {
@@ -66,7 +76,7 @@ const eventos = [
     fecha: '5 de Abril',
     descripcion: 'Celebración de la Resurrección de Cristo.',
     horarios: ['9:00 AM - Santa Misa del día de Resurrección'],
-    imagen: '/src/assets/images/domingo_de_resurreccion.jpg',
+    imagen: domingo_de_resurreccion,
     icono: Sun,
     destacado: true,
   },
