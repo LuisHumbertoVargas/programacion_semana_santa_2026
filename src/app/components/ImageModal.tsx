@@ -86,7 +86,7 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md"
+          className="fixed inset-0 z-50 flex items-start justify-center pt-8 sm:pt-16 lg:items-center bg-black/95 backdrop-blur-md"
           onClick={onClose}
         >
           <motion.div
@@ -94,7 +94,7 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="relative w-[900px] max-w-[90vw] mx-4 max-h-[90vh] overflow-hidden bg-gradient-to-b from-[#120820] via-[#1a0f30] to-[#120820] rounded-2xl shadow-2xl border border-purple-500/20"
+            className="relative w-[900px] max-w-[90vw] mx-4 max-h-[80vh] sm:max-h-[85vh] overflow-hidden bg-gradient-to-b from-[#120820] via-[#1a0f30] to-[#120820] rounded-2xl shadow-2xl border border-purple-500/20"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
