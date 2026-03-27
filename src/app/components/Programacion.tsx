@@ -35,7 +35,7 @@ const eventos = [
   {
     id: 3,
     dia: 'Miércoles Santo',
-    fecha: '1 de Abril',
+    fecha: '01 de Abril',
     descripcion: 'Día de preparación para los misterios pascuales.',
     horarios: ['9:00 AM - Santa Misa', '9:00 AM - Sacramento de la Confesión'],
     imagen: miercoles_santo,
@@ -44,7 +44,7 @@ const eventos = [
   {
     id: 4,
     dia: 'Jueves Santo',
-    fecha: '2 de Abril',
+    fecha: '02 de Abril',
     descripcion: 'Institución de la Eucaristía y Lavatorio de pies.',
     horarios: ['7:30 PM - Misa en recuerdo de la Cena del Señor', '7:30 PM - Lavatorio de los pies', '7:30 PM - Mandamiento del amor', '7:30 PM - Procesión al Monumento', '9:00 PM - Hora Santa por turnos de Adoración', '11:00 PM - Getsemani en el monumento Eucarístico'],
     imagen: jueves_santo,
@@ -54,7 +54,7 @@ const eventos = [
   {
     id: 5,
     dia: 'Viernes Santo',
-    fecha: '3 de Abril',
+    fecha: '03 de Abril',
     descripcion: 'Pasión y Muerte del Señor.',
     horarios: ['9:00 AM - Via Crucis', '3:00 PM - Liturgia de la Pasión del Señor', '3:00 PM - Sermón de las 7 palabras', '3:00 PM - Sagrada comunión', '3:00 PM - Adoración de la Santa Cruz', '3:00 PM - Procesión al Santo Sepulcro'],
     imagen: viernes_santo,
@@ -64,7 +64,7 @@ const eventos = [
   {
     id: 6,
     dia: 'Sábado Santo',
-    fecha: '4 de Abril',
+    fecha: '04 de Abril',
     descripcion: 'Vigilia Pascual y preparación para la Resurrección.',
     horarios: ['9:00 AM - Siete Dolores de la Santísima Virgen María', '9:00 PM - Bendición del fuego', '10:30 PM - Vigilia de Pascua de Resurrección'],
     imagen: sabado_santo,
@@ -73,7 +73,7 @@ const eventos = [
   {
     id: 7,
     dia: 'Domingo de Resurrección',
-    fecha: '5 de Abril',
+    fecha: '05 de Abril',
     descripcion: 'Celebración de la Resurrección de Cristo.',
     horarios: ['9:00 AM - Santa Misa del día de Resurrección'],
     imagen: domingo_de_resurreccion,
@@ -125,7 +125,7 @@ export function Programacion() {
               Semana Santa
             </p>
             <p className="text-purple-400/60 tracking-[0.2em] uppercase text-sm" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300 }}>
-              29 de Marzo - 5 de Abril, 2026
+              29 de Marzo - 05 de Abril, 2026
             </p>
             <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-purple-400/60 to-transparent mx-auto mt-8 shadow-lg shadow-purple-400/30" />
           </motion.div>
