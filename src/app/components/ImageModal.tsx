@@ -94,7 +94,7 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="relative w-[900px] max-w-[90vw] mx-4 max-h-[80vh] sm:max-h-[85vh] overflow-hidden bg-gradient-to-b from-[#120820] via-[#1a0f30] to-[#120820] rounded-2xl shadow-2xl border border-purple-500/20"
+            className="relative w-[900px] max-w-[90vw] mx-4 max-h-[85vh] sm:max-h-[90vh] overflow-hidden bg-gradient-to-b from-[#120820] via-[#1a0f30] to-[#120820] rounded-2xl shadow-2xl border border-purple-500/20 flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
@@ -105,9 +105,9 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
               <X className="w-6 h-6" />
             </button>
 
-            <div className="flex flex-col lg:flex-row h-full">
+            <div className="flex flex-col lg:flex-row flex-1 min-h-0">
               {/* Image Section */}
-              <div className="w-full lg:w-3/5 h-64 sm:h-80 lg:h-[500px] relative">
+              <div className="w-full lg:w-3/5 h-64 sm:h-80 lg:h-[500px] relative flex-shrink-0">
                 {/* Exact same overlays as EventCard */}
                 <div className="absolute inset-0 bg-gradient-to-br to-black/5 z-10" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-purple-900/20 to-transparent z-20" />
@@ -152,7 +152,7 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
               </div>
 
               {/* Enhanced Content Section */}
-              <div className="w-full lg:w-2/5 p-4 sm:p-6 lg:p-8 flex flex-col justify-between bg-gradient-to-b from-[#1a0f30]/50 to-[#120820]/80">
+              <div className="w-full lg:w-2/5 p-4 sm:p-6 lg:p-8 flex flex-col bg-gradient-to-b from-[#1a0f30]/50 to-[#120820]/80 overflow-y-auto">
                 {/* Key Information */}
                 <div className="space-y-3 sm:space-y-4 lg:space-y-4 mb-4 sm:mb-6 lg:mb-6">
                   <motion.div
@@ -244,7 +244,7 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
                 </div>
 
                 {/* Live Stream Button - Mobile optimized */}
-                <div className="mt-auto pt-3 sm:pt-4 lg:pt-4 border-t border-purple-500/20">
+                <div className="pt-3 sm:pt-4 lg:pt-4 border-t border-purple-500/20 mt-auto">
                   <div className="space-y-3">
                     <motion.button
                       initial={{ opacity: 0, scale: 0.9 }}
