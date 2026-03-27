@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Calendar, Clock, Video, MapPin, Users, Heart, Download } from 'lucide-react';
 import { generateProgramacionPDF } from './ProgramacionPDF';
+import { useEffect } from 'react';
 
 interface ImageModalProps {
   isOpen: boolean;
@@ -18,6 +19,17 @@ interface ImageModalProps {
 }
 
 export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
   // Enhanced event information
   const eventDetails = {
     1: { // Domingo de Ramos
