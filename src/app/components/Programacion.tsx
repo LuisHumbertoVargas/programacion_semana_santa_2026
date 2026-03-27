@@ -2,8 +2,9 @@
 
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router';
-import { ArrowLeft, Cross, Flame, Church, Heart, Sun } from 'lucide-react';
+import { ArrowLeft, Cross, Flame, Church, Heart, Sun, Download } from 'lucide-react';
 import { EventCard } from './EventCard';
+import { generateProgramacionPDF } from './ProgramacionPDF';
 
 import domingo_de_ramos from '../../assets/images/domingo_de_ramos.jpg';
 import martes_santo from '../../assets/images/martes_santo.jpg';
@@ -128,6 +129,29 @@ export function Programacion() {
               29 de Marzo - 05 de Abril, 2026
             </p>
             <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-purple-400/60 to-transparent mx-auto mt-8 shadow-lg shadow-purple-400/30" />
+            
+            {/* Download Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="mt-8"
+            >
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={generateProgramacionPDF}
+                className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-550 hover:to-purple-450 text-white py-2 sm:py-3 px-4 sm:px-8 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 shadow-lg shadow-purple-500/30 mx-auto text-sm sm:text-base"
+              >
+                <Download className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="font-medium hidden sm:block" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500 }}>
+                  Descargar programación
+                </span>
+                <span className="font-medium sm:hidden" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500 }}>
+                  Descargar PDF
+                </span>
+              </motion.button>
+            </motion.div>
           </motion.div>
         </div>
       </div>

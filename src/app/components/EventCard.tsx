@@ -75,13 +75,14 @@ export function EventCard({ evento, index }: EventCardProps) {
                   className="w-20 h-[2px] bg-gradient-to-r from-purple-500/60 to-purple-400/40 mb-8 shadow-lg shadow-purple-500/30"
                 />
                 <h2 
-                  className="text-5xl md:text-6xl text-purple-50/98 mb-4 tracking-wide"
+                  className="text-5xl md:text-6xl text-purple-50/98 mb-4 tracking-wide cursor-pointer hover:text-purple-50 transition-colors duration-300"
                   style={{ 
                     fontFamily: 'Cormorant Garamond, serif',
                     fontWeight: 300,
                     textShadow: '0 0 30px rgba(139, 92, 246, 0.35), 0 0 60px rgba(139, 92, 246, 0.15)',
                     letterSpacing: '0.05em'
                   }}
+                  onClick={() => setIsModalOpen(true)}
                 >
                   {evento.dia}
                 </h2>

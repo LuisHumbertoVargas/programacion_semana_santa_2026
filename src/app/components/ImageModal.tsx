@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Calendar, Clock, Video, MapPin, Users, Heart } from 'lucide-react';
+import { X, Calendar, Clock, Video, MapPin, Users, Heart, Download } from 'lucide-react';
+import { generateProgramacionPDF } from './ProgramacionPDF';
 
 interface ImageModalProps {
   isOpen: boolean;
@@ -20,53 +21,46 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
   // Enhanced event information
   const eventDetails = {
     1: { // Domingo de Ramos
-      location: "Parroquia Principal",
-      expectedAttendance: "500+ fieles",
-      liveStream: "https://meet.google.com/xxx-domingo-ramos",
-      specialNote: "Se repartirán ramos benditos al finalizar la misa",
-      requirements: "Llegar 15 minutos antes para buen asiento"
+      tipo: "Celebración Solemne",
+      duracion: "2 horas aproximadamente",
+      recomendacion: "Llegar 15 minutos antes para buen asiento",
+      especial: "Se repartirán ramos benditos al finalizar la misa"
     },
     2: { // Martes Santo
-      location: "Capilla del Santísimo",
-      expectedAttendance: "200+ fieles",
-      liveStream: "https://meet.google.com/xxx-martes-santo",
-      specialNote: "Día de ayuno y oración personal",
-      requirements: "Traer rosario para oración comunitaria"
+      tipo: "Celebración Litúrgica",
+      duracion: "1 hora aproximadamente",
+      recomendacion: "Traer rosario para oración comunitaria",
+      especial: "Día de ayuno y oración personal"
     },
     3: { // Miércoles Santo
-      location: "Iglesia Central",
-      expectedAttendance: "300+ fieles",
-      liveStream: "https://meet.google.com/xxx-miercoles-santo",
-      specialNote: "Preparación espiritual para el Triduo Pascual",
-      requirements: "Confesión disponible durante todo el día"
+      tipo: "Misa Vespertina",
+      duracion: "1 hora aproximadamente",
+      recomendacion: "Confesión disponible durante todo el día",
+      especial: "Preparación espiritual para el Triduo Pascual"
     },
     4: { // Jueves Santo
-      location: "Catedral Diocesana",
-      expectedAttendance: "800+ fieles",
-      liveStream: "https://meet.google.com/xxx-jueves-santo",
-      specialNote: "Ceremonia solemne con lavatorio de pies",
-      requirements: "Traer velas para la procesión"
+      tipo: "Misa de la Cena del Señor",
+      duracion: "2.5 horas aproximadamente",
+      recomendacion: "Traer velas para la procesión",
+      especial: "Ceremonia solemne con lavatorio de pies"
     },
     5: { // Viernes Santo
-      location: "Templo Mayor",
-      expectedAttendance: "1000+ fieles",
-      liveStream: "https://meet.google.com/xxx-viernes-santo",
-      specialNote: "Día de ayuno y abstinencia",
-      requirements: "Vestir con sobriedad y respeto"
+      tipo: "Celebración de la Pasión",
+      duracion: "3 horas aproximadamente",
+      recomendacion: "Vestir con sobriedad y respeto",
+      especial: "Día de ayuno y abstinencia"
     },
     6: { // Sábado Santo
-      location: "Santuario Mariano",
-      expectedAttendance: "400+ fieles",
-      liveStream: "https://meet.google.com/xxx-sabado-santo",
-      specialNote: "Vigilia pascual de renovación bautismal",
-      requirements: "Traer agua para bendición familiar"
+      tipo: "Vigilia Pascual",
+      duracion: "2.5 horas aproximadamente",
+      recomendacion: "Traer agua para bendición familiar",
+      especial: "Vigilia pascual de renovación bautismal"
     },
     7: { // Domingo de Resurrección
-      location: "Basílica Principal",
-      expectedAttendance: "1200+ fieles",
-      liveStream: "https://meet.google.com/xxx-resurreccion",
-      specialNote: "Fiesta principal del año litúrgico",
-      requirements: "Llegar temprano, se esperan multitudes"
+      tipo: "Misa de Pascua de Resurrección",
+      duracion: "2 horas aproximadamente",
+      recomendacion: "Llegar temprano, se esperan multitudes",
+      especial: "Fiesta principal del año litúrgico"
     }
   };
 
@@ -155,10 +149,10 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
                     transition={{ delay: 0.5 }}
                     className="flex items-center gap-2 sm:gap-3 lg:gap-3 text-purple-200/90"
                   >
-                    <MapPin className="w-3 h-3 sm:w-4 sm:h-4 lg:w-4 lg:h-4 text-purple-400" />
+                    <Clock className="w-3 h-3 sm:w-4 sm:h-4 lg:w-4 lg:h-4 text-purple-400" />
                     <div className="flex-1 lg:flex-none">
-                      <p className="text-[10px] sm:text-xs lg:text-xs uppercase tracking-wider opacity-70">Ubicación</p>
-                      <p className="text-xs sm:text-sm lg:text-sm font-medium">{details.location}</p>
+                      <p className="text-[10px] sm:text-xs lg:text-xs uppercase tracking-wider opacity-70">Tipo de celebración</p>
+                      <p className="text-xs sm:text-sm lg:text-sm font-medium">{details.tipo}</p>
                     </div>
                   </motion.div>
 
@@ -168,10 +162,12 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
                     transition={{ delay: 0.6 }}
                     className="flex items-center gap-2 sm:gap-3 lg:gap-3 text-purple-200/90"
                   >
-                    <Users className="w-3 h-3 sm:w-4 sm:h-4 lg:w-4 lg:h-4 text-purple-400" />
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 lg:w-4 lg:h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                     <div className="flex-1 lg:flex-none">
-                      <p className="text-[10px] sm:text-xs lg:text-xs uppercase tracking-wider opacity-70">Asistencia esperada</p>
-                      <p className="text-xs sm:text-sm lg:text-sm font-medium">{details.expectedAttendance}</p>
+                      <p className="text-[10px] sm:text-xs lg:text-xs uppercase tracking-wider opacity-70">Duración estimada</p>
+                      <p className="text-xs sm:text-sm lg:text-sm font-medium">{details.duracion}</p>
                     </div>
                   </motion.div>
 
@@ -185,7 +181,7 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
                       <Heart className="w-3 h-3 sm:w-4 sm:h-4 lg:w-4 lg:h-4 text-purple-400 mt-0.5 flex-shrink-0" />
                       <div className="flex-1">
                         <p className="text-[10px] sm:text-xs lg:text-xs uppercase tracking-wider opacity-90 mb-1 text-purple-200/80">Nota especial</p>
-                        <p className="text-xs sm:text-sm lg:text-sm leading-relaxed text-purple-100/95">{details.specialNote}</p>
+                        <p className="text-xs sm:text-sm lg:text-sm leading-relaxed text-purple-100/95">{details.especial}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -202,7 +198,7 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
                       </svg>
                       <div className="flex-1">
                         <p className="text-[10px] sm:text-xs lg:text-xs uppercase tracking-wider opacity-90 mb-2 text-purple-200/80">Recomendaciones</p>
-                        <p className="text-xs sm:text-sm lg:text-sm leading-relaxed text-purple-100/95">{details.requirements}</p>
+                        <p className="text-xs sm:text-sm lg:text-sm leading-relaxed text-purple-100/95">{details.recomendacion}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -237,18 +233,33 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
 
                 {/* Live Stream Button - Mobile optimized */}
                 <div className="mt-auto pt-3 sm:pt-4 lg:pt-4 border-t border-purple-500/20">
-                  <motion.button
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 1.0 }}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => window.open(details.liveStream, '_blank')}
-                    className="w-full bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white py-2 sm:py-3 lg:py-3 px-4 sm:px-6 lg:px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 lg:gap-3 shadow-lg shadow-purple-500/30 text-sm sm:text-base lg:text-base"
-                  >
-                    <Video className="w-3 h-3 sm:w-5 sm:h-5 lg:w-5 lg:h-5" />
-                    <span className="font-medium text-xs sm:text-sm lg:text-sm">Unirse a transmisión</span>
-                  </motion.button>
+                  <div className="space-y-3">
+                    <motion.button
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 1.0 }}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => alert('Transmisión en vivo próximamente disponible')}
+                      className="w-full bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white py-2 sm:py-3 lg:py-3 px-4 sm:px-6 lg:px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 lg:gap-3 shadow-lg shadow-purple-500/30 text-sm sm:text-base lg:text-base"
+                    >
+                      <Video className="w-3 h-3 sm:w-5 sm:h-5 lg:w-5 lg:h-5" />
+                      <span className="font-medium text-xs sm:text-sm lg:text-sm">Transmisión en vivo</span>
+                    </motion.button>
+                    
+                    <motion.button
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 1.1 }}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={generateProgramacionPDF}
+                      className="w-full bg-gradient-to-r from-purple-800/80 to-purple-700/80 hover:from-purple-700/80 hover:to-purple-600/80 text-white py-2 sm:py-3 lg:py-3 px-4 sm:px-6 lg:px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 lg:gap-3 shadow-lg shadow-purple-600/30 border border-purple-500/30 text-sm sm:text-base lg:text-base"
+                    >
+                      <Download className="w-3 h-3 sm:w-5 sm:h-5 lg:w-5 lg:h-5" />
+                      <span className="font-medium text-xs sm:text-sm lg:text-sm">Descargar programa completo</span>
+                    </motion.button>
+                  </div>
                 </div>
               </div>
             </div>
