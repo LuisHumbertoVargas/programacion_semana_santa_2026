@@ -88,7 +88,7 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="relative w-[900px] max-w-[95vw] mx-4 max-h-[95vh] overflow-hidden bg-gradient-to-b from-[#120820] via-[#1a0f30] to-[#120820] rounded-2xl shadow-2xl border border-purple-500/20"
+            className="relative w-[900px] max-w-[90vw] mx-4 max-h-[90vh] overflow-hidden bg-gradient-to-b from-[#120820] via-[#1a0f30] to-[#120820] rounded-2xl shadow-2xl border border-purple-500/20"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
@@ -99,9 +99,9 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
               <X className="w-6 h-6" />
             </button>
 
-            <div className="flex flex-col h-full">
+            <div className="flex flex-col lg:flex-row h-full">
               {/* Image Section */}
-              <div className="w-full h-64 sm:h-80 lg:h-[500px] lg:w-3/5 relative">
+              <div className="w-full lg:w-3/5 h-64 sm:h-80 lg:h-[500px] relative">
                 {/* Exact same overlays as EventCard */}
                 <div className="absolute inset-0 bg-gradient-to-br to-black/5 z-10" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-purple-900/20 to-transparent z-20" />
@@ -122,10 +122,10 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
-                    className="bg-black/40 backdrop-blur-md rounded-xl p-3 sm:p-4 border border-purple-500/20"
+                    className="bg-black/30 lg:bg-black/30 backdrop-blur-md rounded-xl p-3 sm:p-4 lg:p-4 border border-purple-500/20"
                   >
                     <h2 
-                      className="text-2xl sm:text-3xl lg:text-5xl text-purple-50/98 mb-1 sm:mb-2 tracking-wide"
+                      className="text-2xl sm:text-3xl lg:text-5xl text-purple-50/98 mb-1 sm:mb-2 lg:mb-2 tracking-wide"
                       style={{ 
                         fontFamily: 'Cormorant Garamond, serif',
                         fontWeight: 300,
@@ -135,9 +135,9 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
                     >
                       {evento.dia}
                     </h2>
-                    <div className="flex items-center gap-2 sm:gap-3 text-purple-200/90">
-                      <Calendar className="w-3 h-3 sm:w-5 sm:h-5" />
-                      <p className="tracking-[0.2em] uppercase text-xs sm:text-sm font-light" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300 }}>
+                    <div className="flex items-center gap-2 sm:gap-3 lg:gap-3 text-purple-200/90">
+                      <Calendar className="w-3 h-3 sm:w-5 sm:h-5 lg:w-5 lg:h-5" />
+                      <p className="tracking-[0.2em] uppercase text-xs sm:text-sm lg:text-sm font-light" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300 }}>
                         {evento.fecha}
                       </p>
                     </div>
@@ -148,17 +148,17 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
               {/* Enhanced Content Section */}
               <div className="w-full lg:w-2/5 p-4 sm:p-6 lg:p-8 flex flex-col justify-between bg-gradient-to-b from-[#1a0f30]/50 to-[#120820]/80">
                 {/* Key Information */}
-                <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
+                <div className="space-y-3 sm:space-y-4 lg:space-y-4 mb-4 sm:mb-6 lg:mb-6">
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.5 }}
-                    className="flex items-center gap-2 sm:gap-3 text-purple-200/90"
+                    className="flex items-center gap-2 sm:gap-3 lg:gap-3 text-purple-200/90"
                   >
-                    <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400" />
-                    <div className="flex-1">
-                      <p className="text-[10px] sm:text-xs uppercase tracking-wider opacity-70">Ubicación</p>
-                      <p className="text-xs sm:text-sm font-medium">{details.location}</p>
+                    <MapPin className="w-3 h-3 sm:w-4 sm:h-4 lg:w-4 lg:h-4 text-purple-400" />
+                    <div className="flex-1 lg:flex-none">
+                      <p className="text-[10px] sm:text-xs lg:text-xs uppercase tracking-wider opacity-70">Ubicación</p>
+                      <p className="text-xs sm:text-sm lg:text-sm font-medium">{details.location}</p>
                     </div>
                   </motion.div>
 
@@ -166,12 +166,12 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.6 }}
-                    className="flex items-center gap-2 sm:gap-3 text-purple-200/90"
+                    className="flex items-center gap-2 sm:gap-3 lg:gap-3 text-purple-200/90"
                   >
-                    <Users className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400" />
-                    <div className="flex-1">
-                      <p className="text-[10px] sm:text-xs uppercase tracking-wider opacity-70">Asistencia esperada</p>
-                      <p className="text-xs sm:text-sm font-medium">{details.expectedAttendance}</p>
+                    <Users className="w-3 h-3 sm:w-4 sm:h-4 lg:w-4 lg:h-4 text-purple-400" />
+                    <div className="flex-1 lg:flex-none">
+                      <p className="text-[10px] sm:text-xs lg:text-xs uppercase tracking-wider opacity-70">Asistencia esperada</p>
+                      <p className="text-xs sm:text-sm lg:text-sm font-medium">{details.expectedAttendance}</p>
                     </div>
                   </motion.div>
 
@@ -179,13 +179,13 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.7 }}
-                    className="bg-purple-900/20 border border-purple-500/20 rounded-lg p-3 sm:p-4"
+                    className="bg-purple-900/20 border border-purple-500/20 rounded-lg p-3 sm:p-4 lg:p-4"
                   >
                     <div className="flex items-start gap-2">
-                      <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400 mt-0.5 flex-shrink-0" />
+                      <Heart className="w-3 h-3 sm:w-4 sm:h-4 lg:w-4 lg:h-4 text-purple-400 mt-0.5 flex-shrink-0" />
                       <div className="flex-1">
-                        <p className="text-[10px] sm:text-xs uppercase tracking-wider opacity-70 mb-1">Nota especial</p>
-                        <p className="text-xs sm:text-sm leading-relaxed text-purple-100/90">{details.specialNote}</p>
+                        <p className="text-[10px] sm:text-xs lg:text-xs uppercase tracking-wider opacity-90 mb-1 text-purple-200/80">Nota especial</p>
+                        <p className="text-xs sm:text-sm lg:text-sm leading-relaxed text-purple-100/95">{details.specialNote}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -194,23 +194,30 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.8 }}
-                    className="bg-gradient-to-r from-purple-900/30 to-purple-800/20 border-l-4 border-purple-500 rounded-lg p-3 sm:p-4"
+                    className="bg-gradient-to-r from-purple-900/30 to-purple-800/20 border-l-4 border-purple-500 rounded-lg p-3 sm:p-4 lg:p-4"
                   >
-                    <p className="text-[10px] sm:text-xs uppercase tracking-wider opacity-70 mb-2">Recomendaciones</p>
-                    <p className="text-xs sm:text-sm leading-relaxed text-purple-100/90">{details.requirements}</p>
+                    <div className="flex items-start gap-2">
+                      <svg className="w-3 h-3 sm:w-4 sm:h-4 lg:w-4 lg:h-4 text-purple-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                      <div className="flex-1">
+                        <p className="text-[10px] sm:text-xs lg:text-xs uppercase tracking-wider opacity-90 mb-2 text-purple-200/80">Recomendaciones</p>
+                        <p className="text-xs sm:text-sm lg:text-sm leading-relaxed text-purple-100/95">{details.requirements}</p>
+                      </div>
+                    </div>
                   </motion.div>
                 </div>
 
                 {/* Compact Schedule */}
-                <div className="border-t border-purple-500/20 pt-3 sm:pt-4 mb-4 sm:mb-6">
+                <div className="border-t border-purple-500/20 pt-3 sm:pt-4 lg:pt-4 mb-4 sm:mb-6 lg:mb-6">
                   <h3 
-                    className="text-purple-200/90 text-xs sm:text-sm tracking-[0.25em] mb-2 sm:mb-3 uppercase font-medium flex items-center gap-2" 
+                    className="text-purple-200/90 text-xs sm:text-sm lg:text-sm tracking-[0.25em] mb-2 sm:mb-3 lg:mb-3 uppercase font-medium flex items-center gap-2" 
                     style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}
                   >
-                    <Clock className="w-3 h-3 sm:w-4 sm:h-4" />
-                    <span className="text-xs sm:text-sm">Horarios principales</span>
+                    <Clock className="w-3 h-3 sm:w-4 sm:h-4 lg:w-4 lg:h-4" />
+                    <span className="text-xs sm:text-sm lg:text-sm">Horarios principales</span>
                   </h3>
-                  <div className="space-y-1 sm:space-y-2 max-h-32 sm:max-h-40 overflow-y-auto pr-2">
+                  <div className="space-y-1 sm:space-y-2 lg:space-y-2 max-h-32 sm:max-h-40 lg:max-h-40 overflow-y-auto pr-2">
                     {evento.horarios.map((horario, idx) => (
                       <motion.div
                         key={idx}
@@ -219,8 +226,8 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
                         transition={{ delay: 0.9 + idx * 0.1 }}
                         className="flex items-start gap-2 text-purple-100/70"
                       >
-                        <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-purple-400/70 rounded-full mt-1.5 sm:mt-2 flex-shrink-0" />
-                        <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300, fontSize: '0.75rem' }} className="leading-relaxed text-xs sm:text-[0.85rem]">
+                        <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 lg:w-1.5 lg:h-1.5 bg-purple-400/70 rounded-full mt-1.5 sm:mt-2 lg:mt-2 flex-shrink-0" />
+                        <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300, fontSize: '0.75rem' }} className="leading-relaxed text-xs sm:text-[0.85rem] lg:text-[0.85rem]">
                           {horario}
                         </span>
                       </motion.div>
@@ -229,7 +236,7 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
                 </div>
 
                 {/* Live Stream Button - Mobile optimized */}
-                <div className="mt-auto pt-3 sm:pt-4 border-t border-purple-500/20">
+                <div className="mt-auto pt-3 sm:pt-4 lg:pt-4 border-t border-purple-500/20">
                   <motion.button
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -237,10 +244,10 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => window.open(details.liveStream, '_blank')}
-                    className="w-full bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 shadow-lg shadow-purple-500/30 text-sm sm:text-base"
+                    className="w-full bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white py-2 sm:py-3 lg:py-3 px-4 sm:px-6 lg:px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 lg:gap-3 shadow-lg shadow-purple-500/30 text-sm sm:text-base lg:text-base"
                   >
-                    <Video className="w-3 h-3 sm:w-5 sm:h-5" />
-                    <span className="font-medium text-xs sm:text-sm">Unirse a transmisión</span>
+                    <Video className="w-3 h-3 sm:w-5 sm:h-5 lg:w-5 lg:h-5" />
+                    <span className="font-medium text-xs sm:text-sm lg:text-sm">Unirse a transmisión</span>
                   </motion.button>
                 </div>
               </div>
