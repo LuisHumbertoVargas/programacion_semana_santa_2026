@@ -8,7 +8,7 @@ interface Evento {
   dia: string;
   fecha: string;
   descripcion: string;
-  horarios: string[];
+  horarios: { hora: string; actividades: string[]; }[];
   imagen: string;
   icono: LucideIcon;
   destacado?: boolean;
@@ -49,14 +49,14 @@ export function EventCard({ evento, index }: EventCardProps) {
                 src={evento.imagen}
                 alt={evento.dia}
                 className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 group-hover:brightness-75"
-                style={{ filter: 'contrast(1.1) saturate(1.2)', objectPosition: '50% 55%' }}
+                style={{ filter: 'contrast(1.1) saturate(1.2)', objectPosition: '50% 20%' }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-purple-900/20 to-transparent z-20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-[#47575a]/20 to-transparent z-20" />
               
               {/* Click hint overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/5 via-transparent to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-30 flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#5e6a53]/5 via-transparent to-[#5e6a53]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-30 flex items-center justify-center">
                 <div className="bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="text-purple-200 text-sm font-medium">Ver imagen completa</span>
+                  <span className="text-[#c3aa85] text-sm font-medium">Ver imagen completa</span>
                 </div>
               </div>
             </div>
@@ -72,23 +72,30 @@ export function EventCard({ evento, index }: EventCardProps) {
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="w-20 h-[2px] bg-gradient-to-r from-purple-500/60 to-purple-400/40 mb-8 shadow-lg shadow-purple-500/30"
+                  className="w-20 h-[2px] bg-gradient-to-r from-[#4a5f63] to-[#5e6a53] mb-8 shadow-lg shadow-[#4a5f63]/50"
                 />
                 <h2 
-                  className="text-5xl md:text-6xl text-purple-50/98 mb-4 tracking-wide cursor-pointer hover:text-purple-50 transition-colors duration-300"
+                  className="text-5xl md:text-6xl text-[#47575a] mb-4 tracking-wide cursor-pointer hover:text-[#4a5f63] transition-colors duration-300"
                   style={{ 
                     fontFamily: 'Cormorant Garamond, serif',
                     fontWeight: 300,
-                    textShadow: '0 0 30px rgba(139, 92, 246, 0.35), 0 0 60px rgba(139, 92, 246, 0.15)',
+                    textShadow: '0 0 30px rgba(74, 95, 99, 0.5), 0 0 60px rgba(74, 95, 99, 0.3)',
                     letterSpacing: '0.05em'
                   }}
                   onClick={() => setIsModalOpen(true)}
                 >
                   {evento.dia}
                 </h2>
-                <p className="text-purple-200/80 tracking-[0.2em] uppercase text-base font-light" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300 }}>
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 }}
+                  className="text-[#4a5f63] tracking-[0.2em] uppercase text-sm md:text-base mb-2" 
+                  style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300 }}
+                >
                   {evento.fecha}
-                </p>
+                </motion.p>
               </div>
 
               {/* Descripción */}
@@ -97,25 +104,25 @@ export function EventCard({ evento, index }: EventCardProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="text-purple-100/80 leading-relaxed text-lg" 
+                className="text-[#47575a] leading-relaxed text-lg sm:text-xl" 
                 style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300 }}
               >
                 {evento.descripcion}
               </motion.p>
 
               {/* Horarios */}
-              <div className="space-y-4 pt-8">
+              <div className="space-y-4 pt-3">
                 <motion.h3 
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.5 }}
-                  className="text-purple-200/90 text-sm tracking-[0.25em] mb-6 uppercase font-medium" 
+                  className="text-[#4a5f63] text-sm tracking-[0.25em] mb-6 uppercase font-medium" 
                   style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}
                 >
                   Horarios
                 </motion.h3>
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {evento.horarios.map((horario, idx) => (
                     <motion.div
                       key={idx}
@@ -124,15 +131,28 @@ export function EventCard({ evento, index }: EventCardProps) {
                       whileHover={{ x: 10 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.6 + idx * 0.1 }}
-                      className="flex items-center gap-4 text-purple-100/70 group cursor-default"
+                      className="space-y-2"
                     >
-                      <div className="relative">
-                        <div className="w-2 h-2 bg-purple-400/70 rounded-full group-hover:bg-purple-300 group-hover:scale-150 transition-all duration-500" />
-                        <div className="absolute inset-0 w-2 h-2 bg-purple-400/50 rounded-full animate-ping" />
+                      <div className="text-[#47575a] font-semibold text-base sm:text-lg" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600 }}>
+                        {horario.hora}
                       </div>
-                      <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300, fontSize: '1rem' }} className="group-hover:text-purple-100/90 transition-colors duration-300">
-                        {horario}
-                      </span>
+                      <div className="space-y-1 ml-4">
+                        {horario.actividades.map((actividad, actIdx) => (
+                          <motion.div
+                            key={actIdx}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.7 + idx * 0.1 + actIdx * 0.05 }}
+                            className="flex items-center gap-3 text-[#4a5f63] group cursor-default"
+                          >
+                            <div className="text-[#4a5538] text-lg">✓</div>
+                            <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300, fontSize: '0.95rem' }} className="group-hover:text-[#47575a] transition-colors duration-300">
+                              {actividad}
+                            </span>
+                          </motion.div>
+                        ))}
+                      </div>
                     </motion.div>
                   ))}
                 </div>
