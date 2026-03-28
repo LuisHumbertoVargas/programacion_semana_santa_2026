@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 import { useNavigate } from 'react-router';
 import { ArrowLeft, Cross, Flame, Church, Heart, Sun, Download } from 'lucide-react';
 import { EventCard } from './EventCard';
-import programacionPDF from '../../assets/document/Programación_Semana_Santa_2026_v1.pdf';
+import programacionPDF from '../../assets/document/Programación_Semana_Santa_2026.pdf';
 
 import domingo_de_ramos from '../../assets/images/domingo_ramos.jpeg';
 import lunes_santo from '../../assets/images/lunes_santo.jpeg';
