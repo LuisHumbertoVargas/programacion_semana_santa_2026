@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://semanasanta2026.com/sitemap.xml
+
+# Prioridad de rastreo
+Crawl-delay: 1
