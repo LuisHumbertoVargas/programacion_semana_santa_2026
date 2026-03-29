@@ -45,12 +45,12 @@ export function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="text-7xl md:text-8xl tracking-[0.2em] mb-8 text-white uppercase"
+            className="text-7xl md:text-8xl tracking-[0.2em] mb-6 text-white uppercase"
             style={{ 
               fontFamily: 'Cormorant Garamond, serif',
-              fontWeight: 300,
-              letterSpacing: '0.15em',
-              textShadow: '0 0 40px rgba(74, 85, 56, 0.4), 0 4px 20px rgba(0,0,0,0.7)'
+              fontWeight: 400,
+              letterSpacing: '0.2em',
+              textShadow: '0 0 40px rgba(74, 85, 56, 0.6), 0 4px 20px rgba(0,0,0,0.9)'
             }}
           >
             Semana Santa
@@ -61,8 +61,8 @@ export function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="text-2xl md:text-3xl text-[#ffffff]/95 mb-6 tracking-[0.3em] uppercase"
-            style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300 }}
+            className="text-[1.85rem] md:text-3xl text-[#ffffff]/95 mb-8 tracking-[0.3em] uppercase font-semibold"
+            style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}
           >
             2026
           </motion.p>
@@ -72,12 +72,16 @@ export function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
-            className="text-base md:text-lg text-white/80 max-w-2xl mx-auto mb-16 leading-relaxed"
-            style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300 }}
+            className="text-lg md:text-lg text-white/80 max-w-2xl mx-auto mb-85 leading-relaxed font-medium"
+            style={{ 
+              fontFamily: 'Inter, sans-serif', 
+              fontWeight: 500,
+              textShadow: '0 0 40px rgba(74, 85, 56, 0.6), 0 4px 20px rgba(0,0,0,0.9)'
+            }}
           >
             Siete días de fe, tradición y recogimiento.
             <br />
-            Un viaje espiritual que conmemora la Pasión, Muerte y Resurrección de Cristo.
+            Un viaje espiritual que conmemora la Pasión, Muerte y Resurrección de Nuestro Señor Jesucristo.
           </motion.p>
 
           {/* Decorative Center Border */}
@@ -96,8 +100,8 @@ export function Home() {
             whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(74, 85, 56, 0.4)' }}
             whileTap={{ scale: 0.95 }}
             onClick={() => navigate('/programacion')}
-            className="px-14 py-5 border border-[#4a5538]/50 bg-[#4a5f63]/40 backdrop-blur-md text-white hover:bg-[#4a5f63]/50 hover:border-[#4a5538]/60 transition-all duration-500 tracking-[0.25em] uppercase"
-            style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, fontSize: '0.875rem' }}
+            className="px-14 py-5 border border-[#4a5538]/50 rounded-md bg-[#4a5f63]/40 backdrop-blur-md text-white hover:bg-[#4a5f63]/50 hover:border-[#4a5538]/60 transition-all duration-500 tracking-[0.25em] uppercase font-semibold"
+            style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '0.9rem' }}
           >
             Ver Programación
           </motion.button>
@@ -108,6 +112,7 @@ export function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 2, repeat: Infinity, repeatType: 'reverse' }}
             className="absolute bottom-8 left-1/2 -translate-x-1/2"
+            onClick={() => navigate('/programacion')}
           >
             <ChevronDown className="w-8 h-8 text-[#4a5538]/60" />
           </motion.div>

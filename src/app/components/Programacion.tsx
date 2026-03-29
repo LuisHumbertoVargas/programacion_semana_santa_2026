@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router';
-import { ArrowLeft, Cross, Flame, Church, Heart, Sun, Download } from 'lucide-react';
+import { ArrowLeft, Cross, Flame, Church, Heart, Sun, Download, Video } from 'lucide-react';
 import { EventCard } from './EventCard';
 import programacionPDF from '../../assets/document/Programación_Semana_Santa_2026.pdf';
 
@@ -26,6 +26,7 @@ const eventos = [
     ],
     imagen: domingo_de_ramos,
     icono: Church,
+    duracion: '2 horas',
   },
   {
     id: 2,
@@ -38,6 +39,7 @@ const eventos = [
     ],
     imagen: lunes_santo,
     icono: Heart,
+    duracion: '3 horas',
   },
   {
     id: 3,
@@ -50,6 +52,7 @@ const eventos = [
     ],
     imagen: martes_santo,
     icono: Heart,
+    duracion: '3 horas',
   },
   {
     id: 4,
@@ -62,6 +65,7 @@ const eventos = [
     ],
     imagen: miercoles_santo,
     icono: Cross,
+    duracion: '3 horas',
   },
   {
     id: 5,
@@ -76,6 +80,7 @@ const eventos = [
     imagen: jueves_santo,
     icono: Flame,
     destacado: true,
+    duracion: '6 horas',
   },
   {
     id: 6,
@@ -89,6 +94,7 @@ const eventos = [
     imagen: viernes_santo,
     icono: Cross,
     destacado: true,
+    duracion: '4 horas',
   },
   {
     id: 7,
@@ -97,11 +103,12 @@ const eventos = [
     descripcion: 'Vigilia de oración y esperanza en la victoria de la luz sobre las tinieblas, preparando nuestros corazones para recibir la alegría pascual y el testimonio de la fe viva.',
     horarios: [
       { hora: '9:00 AM', actividades: ['Siete Dolores de la Santísima Virgen María'] },
-      { hora: '9:00 PM', actividades: ['Bendición del fuego'] },
-      { hora: '10:30 PM', actividades: ['VIGILIA DE PASCUA DE RESURRECCIÓN'] }
+      { hora: '9:00 PM', actividades: ['Bendición del Fuego y del Cirio Pascual', 'Lectura de las Profecías', 'Bendición de la Fuente Bautismal'] },
+      { hora: '10:30 PM', actividades: ['SANTA MISA DE LA VIGILIA PASCUAL'] }
     ],
     imagen: sabado_santo,
     icono: Flame,
+    duracion: '4 horas',
   },
   {
     id: 8,
@@ -114,6 +121,7 @@ const eventos = [
     imagen: domingo_de_resurreccion,
     icono: Sun,
     destacado: true,
+    duracion: '2 horas',
   },
 ];
 
@@ -144,7 +152,7 @@ export function Programacion() {
             className="flex items-center gap-3 text-white/90 hover:text-white transition-all duration-300 mb-8 group"
           >
             <ArrowLeft className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-            <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300 }}>Volver</span>
+            <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600 }}>Volver</span>
           </motion.button>
 
           <motion.div
@@ -155,43 +163,108 @@ export function Programacion() {
           >
             <div className="w-32 h-[2px] bg-gradient-to-r from-transparent via-[#4a5538] to-transparent mx-auto mb-8" />
             <h1 
-              className="text-4xl max-[420px]:text-3xl max-[336px]:text-[1.72rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white mb-6 tracking-[0.15em] uppercase"
+              className="text-4xl max-[420px]:text-3xl max-[336px]:text-[1.72rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white mb-6 tracking-[0.15em] uppercase font-bold"
               style={{ 
                 fontFamily: 'Cormorant Garamond, serif',
-                fontWeight: 200,
-                textShadow: '0 0 40px rgba(74, 85, 56, 0.4), 0 0 80px rgba(74, 85, 56, 0.2)',
+                fontWeight: 700,
+                textShadow: '0 0 40px rgba(74, 85, 56, 0.6), 0 0 80px rgba(74, 85, 56, 0.3)',
                 letterSpacing: '0.2em'
               }}
             >
               Programación
             </h1>
-            <p className="text-white/90 tracking-[0.25em] uppercase text-lg mb-2" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 200 }}>
+            <p className="text-white/90 tracking-[0.25em] uppercase text-lg mb-2 font-bold" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700 }}>
               Semana Santa
             </p>
-            <p className="text-white/80 tracking-[0.2em] uppercase text-sm" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300 }}>
+            <p className="text-white/80 tracking-[0.2em] uppercase text-sm font-semibold" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600 }}>
               29 de Marzo - 05 de Abril, 2026
             </p>
             <div className="w-32 h-[2px] bg-gradient-to-r from-transparent via-[#4a5538] to-transparent mx-auto mt-8" />
             
-            {/* Download Button */}
+            {/* Buttons Container */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="mt-8"
+              className="mt-8 flex flex-col sm:flex-row gap-4 items-center justify-center"
             >
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={downloadPDF}
-                className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white py-3 sm:py-3 px-6 sm:px-8 rounded-2xl transition-all duration-500 flex items-center justify-center gap-3 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-black/30 mx-auto text-sm sm:text-base"
+                className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white py-3 sm:py-3 px-6 sm:px-8 rounded-2xl transition-all duration-500 flex items-center justify-center gap-3 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-black/30 text-sm sm:text-base"
               >
-                <Download className="w-4 h-4 sm:w-5 sm:h-5" />
-                <span className="font-medium hidden sm:block" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500 }}>
+                <Download className="w-5 h-5 sm:w-5 sm:h-5" />
+                <span className="font-bold hidden sm:block" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600 }}>
                   Descargar programación
                 </span>
-                <span className="font-medium sm:hidden" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500 }}>
+                <span className="font-bold sm:hidden" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600 }}>
                   Descargar PDF
+                </span>
+              </motion.button>
+              
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => {
+                  const now = new Date();
+                  const currentHour = now.getHours();
+                  const currentDay = now.getDay();
+                  
+                  // Check if it's a celebration day and time based on actual event schedules (15 minutes before)
+                  const isCelebrationTime = (
+                    (currentDay === 0 && currentHour >= 7 && currentHour < 12) || // Domingo: 7:45 AM - 12:00 PM (15 min antes de 8:00 AM)
+                    (currentDay >= 1 && currentDay <= 3 && currentHour >= 7 && currentHour < 11) || // Lunes a Miércoles: 7:45 AM - 11:00 AM (15 min antes de 8:00 AM)
+                    (currentDay === 4 && currentHour >= 17 && currentHour < 23) || // Jueves: 5:45 PM - 11:00 PM (15 min antes de 6:00 PM)
+                    (currentDay === 5 && (currentHour >= 8 && currentHour < 11 || currentHour === 14)) || // Viernes: 8:45 AM - 11:00 AM y 2:45 PM - 3:00 PM
+                    (currentDay === 6 && (currentHour >= 8 && currentHour < 11 || currentHour >= 20)) // Sábado: 8:45 AM - 11:00 AM y 8:45 PM - 11:00 PM
+                  );
+                  
+                  if (isCelebrationTime) {
+                    window.open('https://meet.google.com/qum-tvuu-apt', '_blank');
+                  } else {
+                    // Show custom alert instead of browser alert
+                    const customAlert = document.createElement('div');
+                    customAlert.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm';
+                    customAlert.innerHTML = `
+                      <div class="bg-white rounded-2xl p-10 max-w-lg mx-4 shadow-2xl">
+                        <div class="text-center">
+                          <div class="w-20 h-20 bg-gradient-to-br from-[#4a5538] to-[#5e6a53] rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                          </div>
+                          <h3 class="text-2xl font-bold text-[#2a3a3a] mb-4" style="font-family: 'Cormorant Garamond, serif'; font-weight: 700">Transmisión no disponible</h3>
+                          <p class="text-gray-700 mb-8 text-xl font-semibold" style="font-family: 'Inter, sans-serif'; font-weight: 500">
+                            La transmisión en vivo está disponible únicamente durante los horarios de celebración litúrgica.
+                          </p>
+                          <button id="closeAlertBtn" class="bg-[#4a5538] text-white px-8 py-3 rounded-lg hover:bg-[#5e6a53] transition-colors font-bold text-xl" style="font-family: 'Inter, sans-serif'; font-weight: 600">
+                            Entendido
+                          </button>
+                        </div>
+                      </div>
+                    `;
+                    document.body.appendChild(customAlert);
+                    
+                    // Add event listener to close alert safely
+                    const closeBtn = document.getElementById('closeAlertBtn');
+                    if (closeBtn) {
+                      closeBtn.addEventListener('click', () => {
+                        if (customAlert && customAlert.parentNode) {
+                          customAlert.parentNode.removeChild(customAlert);
+                        }
+                      });
+                    }
+                  }
+                }}
+                className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white py-3 sm:py-3 px-6 sm:px-8 rounded-2xl transition-all duration-500 flex items-center justify-center gap-3 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-black/30 text-sm sm:text-base"
+              >
+                <Video className="w-5 h-5" />
+                <span className="font-bold hidden sm:block" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600 }}>
+                  Transmisión en vivo
+                </span>
+                <span className="font-bold sm:hidden" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600 }}>
+                  Ver Transmisión 
                 </span>
               </motion.button>
             </motion.div>
@@ -202,8 +275,6 @@ export function Programacion() {
       {/* Timeline */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-20">
         <div className="relative">
-          {/* Vertical timeline line */}
-          {/* <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-purple-500/30 via-purple-400/20 to-purple-500/30" /> */}
           
           <div className="space-y-16">
             {eventos.map((evento, index) => (
@@ -223,7 +294,7 @@ export function Programacion() {
           <div className="relative">
             <div className="w-48 h-[1px] bg-gradient-to-r from-transparent via-[#5e6a53]/40 to-transparent mx-auto mb-12 shadow-lg shadow-[#5e6a53]/20" />
             <div className="max-w-2xl mx-auto">
-              <h3 className="text-[#47575a]/70 text-xl italic mb-8 leading-relaxed" style={{ fontFamily: 'Cormorant Garamond, serif', fontWeight: 300 }}>
+              <h3 className="text-[#2a3a3a] text-xl italic mb-8 leading-relaxed" style={{ fontFamily: 'Cormorant Garamond, serif', fontWeight: 700 }}>
                 "Y al tercer día resucitó de entre los muertos"
               </h3>
               <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-[#5e6a53]/30 to-transparent mx-auto mb-8" />

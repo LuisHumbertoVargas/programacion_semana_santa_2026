@@ -12,6 +12,7 @@ interface Evento {
   imagen: string;
   icono: LucideIcon;
   destacado?: boolean;
+  duracion: string;
 }
 
 interface EventCardProps {
@@ -54,10 +55,15 @@ export function EventCard({ evento, index }: EventCardProps) {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-[#47575a]/20 to-transparent z-20" />
               
               {/* Click hint overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#5e6a53]/5 via-transparent to-[#5e6a53]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-30 flex items-center justify-center">
+              {/* <div className="absolute inset-0 bg-gradient-to-r from-[#5e6a53]/5 via-transparent to-[#5e6a53]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-30 flex items-center justify-center">
                 <div className="bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <span className="text-[#c3aa85] text-sm font-medium">Ver imagen completa</span>
                 </div>
+              </div> */}
+              
+              {/* Details hint indicator */}
+              <div className="absolute top-3 right-3 bg-[#4a5f63]/70 text-white px-3 py-1 rounded-md opacity-90 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                <span className="text-sm font-medium">Ver más</span>
               </div>
             </div>
           </motion.div>
@@ -75,10 +81,10 @@ export function EventCard({ evento, index }: EventCardProps) {
                   className="w-20 h-[2px] bg-gradient-to-r from-[#4a5f63] to-[#5e6a53] mb-8 shadow-lg shadow-[#4a5f63]/50"
                 />
                 <h2 
-                  className="text-5xl md:text-6xl text-[#47575a] mb-4 tracking-wide cursor-pointer hover:text-[#4a5f63] transition-colors duration-300"
+                  className="text-6xl md:text-6xl text-[#1a2a2a] mb-4 tracking-wide cursor-pointer hover:text-[#4a5f63] transition-colors duration-300 font-extrabold"
                   style={{ 
                     fontFamily: 'Cormorant Garamond, serif',
-                    fontWeight: 300,
+                    fontWeight: 700,
                     textShadow: '0 0 30px rgba(74, 95, 99, 0.5), 0 0 60px rgba(74, 95, 99, 0.3)',
                     letterSpacing: '0.05em'
                   }}
@@ -91,8 +97,8 @@ export function EventCard({ evento, index }: EventCardProps) {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
-                  className="text-[#4a5f63] tracking-[0.2em] uppercase text-sm md:text-base mb-2" 
-                  style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300 }}
+                  className="text-[#1a2a2a] tracking-[0.2em] uppercase text-lg md:text-base mb-2 font-bold" 
+                  style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700 }}
                 >
                   {evento.fecha}
                 </motion.p>
@@ -104,24 +110,30 @@ export function EventCard({ evento, index }: EventCardProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="text-[#47575a] leading-relaxed text-lg sm:text-xl" 
-                style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300 }}
+                className="text-[#1a2a2a] leading-relaxed text-lg sm:text-xl font-medium" 
+                style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500 }}
               >
                 {evento.descripcion}
               </motion.p>
 
               {/* Horarios */}
               <div className="space-y-4 pt-3">
-                <motion.h3 
+                <motion.div 
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.5 }}
-                  className="text-[#4a5f63] text-sm tracking-[0.25em] mb-6 uppercase font-medium" 
-                  style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}
+                  className="flex items-center gap-3 mb-6"
                 >
-                  Horarios
-                </motion.h3>
+                  <svg className="w-6 h-6 text-[#4a5f63]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <h3 className="text-[#1a2a2a] text-xl tracking-[0.25em] uppercase font-semibold" 
+                    style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600 }}
+                  >
+                    Horarios
+                  </h3>
+                </motion.div>
                 <div className="space-y-4">
                   {evento.horarios.map((horario, idx) => (
                     <motion.div
@@ -133,10 +145,15 @@ export function EventCard({ evento, index }: EventCardProps) {
                       transition={{ delay: 0.6 + idx * 0.1 }}
                       className="space-y-2"
                     >
-                      <div className="text-[#47575a] font-semibold text-base sm:text-lg" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600 }}>
-                        {horario.hora}
+                      <div className="flex items-center gap-3">
+                        <svg className="w-5 h-5 text-[#4a5f63]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <p className="text-[#1a2a2a] text-lg font-bold" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700 }}>
+                          {horario.hora}
+                        </p>
                       </div>
-                      <div className="space-y-1 ml-4">
+                      <div className="space-y-1 ml-8">
                         {horario.actividades.map((actividad, actIdx) => (
                           <motion.div
                             key={actIdx}
@@ -144,10 +161,10 @@ export function EventCard({ evento, index }: EventCardProps) {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.7 + idx * 0.1 + actIdx * 0.05 }}
-                            className="flex items-center gap-3 text-[#4a5f63] group cursor-default"
+                            className="flex items-center gap-3 text-[#1a2a2a] group cursor-default"
                           >
                             <div className="text-[#4a5538] text-lg">✓</div>
-                            <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300, fontSize: '0.95rem' }} className="group-hover:text-[#47575a] transition-colors duration-300">
+                            <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: '1.15rem' }} className="group-hover:text-[#4a5f63] transition-colors duration-300">
                               {actividad}
                             </span>
                           </motion.div>
