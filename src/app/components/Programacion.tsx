@@ -293,13 +293,13 @@ export function Programacion() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#47575a]/10 via-[#5e6a53]/5 to-[#47575a]/10 blur-3xl" />
           <div className="relative">
             <div className="w-48 h-[1px] bg-gradient-to-r from-transparent via-[#5e6a53]/40 to-transparent mx-auto mb-12 shadow-lg shadow-[#5e6a53]/20" />
-            <div className="max-w-2xl mx-auto">
-              <h3 className="text-[#2a3a3a] text-xl italic mb-8 leading-relaxed" style={{ fontFamily: 'Cormorant Garamond, serif', fontWeight: 700 }}>
-                "Y al tercer día resucitó de entre los muertos"
+            <div className="max-w-3xl mx-auto">
+              <h3 className="text-[#8B0000] text-5xl italic mb-8 leading-relaxed" style={{ fontFamily: 'Cormorant Garamond, serif', fontWeight: 700 }}>
+                "Felices pascuas de resurrección"
               </h3>
               <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-[#5e6a53]/30 to-transparent mx-auto mb-8" />
               <span className="text-[#49584a]/60 text-xs leading-relaxed" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300 }}>
-                © 2026 - Todos los derechos reservados
+                © 2026 Vacant Praetorium <br />Todos los derechos reservados
               </span>
             </div>
           </div>
