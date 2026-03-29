@@ -3,11 +3,11 @@
   "@type": "WebSite",
   "name": "Programación de Semana Santa 2026",
   "description": "Vive la Semana Santa 2026 con nosotros. Siete días de fe, tradición y recogimiento. Conmemora la Pasión, Muerte y Resurrección de Nuestro Señor Jesucristo.",
-  "url": "https://semanasanta2026.com",
-  "image": "https://semanasanta2026.com/og-image.jpg",
+  "url": "https://vacant-praetorium.com",
+  "image": "https://vacant-praetorium.com/og-image.jpg",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://semanasanta2026.com/programacion"
+    "target": "https://vacant-praetorium.com/programacion"
   },
   "sameAs": [
     "https://facebook.com/semanasanta2026",
