@@ -44,42 +44,42 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
   const eventDetails: { [key: number]: { explicacion: string; recomendacion: string; duracion: string; } } = {
     1: {
       explicacion: 'El Segundo Domingo de Pasión es un grande y santo día, conmemora el último triunfo de Nuestro Señor Jesucristo sobre esta tierra y abre la Semana Santa. En este día, la Iglesia celebra la entrada triunfal de Nuestro Señor en Jerusalén; cuando la multitud, marchando antes y detrás de Él, cortaba palmas de los árboles y las arrojaban ante su paso, gritando: "Hosanna (gloria y honor) al Hijo de David. Bendito es El que viene en nombre del Señor". Y es en conmemoración de aquella entrada triunfal que las palmas se bendicen e inciensan en la solemne procesión. Las principales ceremonias de este día son la Bendición de los Ramos que le sigue un ritual similar al de la Misa con una Epístola, un Evangelio, un Prefacio y un Sanctus. Continúa con la Procesión y la Misa con la lectura de la Pasión.',
-      recomendacion: 'Participe con devoción en la Bendición de Ramos llevando su palma o ramos bendecidos. Medite en el significado de la entrada triunfal de Jesús y su humildad al entrar en Jerusalén montado en un asno. Prepare su corazón para vivir intensamente la Semana Santa.',
+      recomendacion: 'Participe con devoción llevando sus ramos bendecidos. Medite en la entrada triunfal de Jesús y prepare su corazón para la Semana Santa.',
       duracion: '2 horas'
     },
     2: {
       explicacion: 'Es un día de introspección y preparación para el camino al Calvario, la liturgia en este día se centra en la figura de Jesús como Siervo Sufriente. El evangelio de San Juan nos muestra el gesto de María en Betania, que es uno de los momentos más cargados de simbolismo y emoción de toda la Semana Santa. No es solo un acto de cariño; es un profético anuncio de la muerte y una lección sobre la generosidad sin límites.',
-      recomendacion: 'Dedique tiempo a la oración personal y meditación. Contemple el gesto de María ungiendo los pies de Jesús como acto de amor y entrega. Participe en la confesión sacramental para purificar su alma.',
+      recomendacion: 'Dedique tiempo a la oración personal. Contemple el gesto de María y participe en la confesión sacramental.',
       duracion: '1 hora 30 minutos'
     },
     3: {
       explicacion: 'Es un día de silencio preventivo, preparándonos para el Triduo Pascual. Se nos presenta el Evangelio según San Marcos que nos lleva a vivir la pasión de Nuestro Señor Jesucristo de una manera muy "cruda". Marcos escribió el relato más antiguo y breve, y su objetivo es mostrar a un Jesús que sufre profundamente, abandonado por todos, para que los fieles nos preguntemos: "¿Realmente este hombre era el Hijo de Dios?".',
-      recomendacion: 'Guarde silencio y reflexión. Medite en el sufrimiento de Jesús y su abandono. Participe en los actos litúrgicos con devoción y prepare su corazón para el Triduo Pascual.',
+      recomendacion: 'Guarde silencio y medite en el sufrimiento de Jesús. Participe con devoción en los actos litúrgicos.',
       duracion: '1 hora 45 minutos'
     },
     4: {
       explicacion: 'Es el último día de la Cuaresma y la víspera del Triduo Pascual. Meditamos el Evangelio según San Lucas en el que notamos que él es el "Evangelista de la Misericordia". Su relato no solo se enfoca en el dolor, sino en el perdón, la sanación y la dignidad de Jesús como Salvador.',
-      recomendacion: 'Aproveche este último día de Cuaresma para intensificar su vida espiritual. Medite en la misericordia de Jesús y su amor por los pecadores. Participe en la confesión sacramental.',
+      recomendacion: 'Aproveche este día para intensificar su vida espiritual. Medite en la misericordia de Jesús y participe en la confesión.',
       duracion: '1 hora 45 minutos'
     },
     5: {
       explicacion: 'La Misa de este día conmemora especialmente la Institución de la Sagrada Eucaristía en la Última Cena, y la Ordenación de los Apóstoles, y es, por lo tanto, una Misa de alegría y de acción de gracias. Por ende, la Iglesia hace de lado momentáneamente el penitencial color violeta, y se reviste con ornamentos blancos; el altar está decorado; se dice el Gloria. Durante este Gloria las campanas suenan, y desde ese momento hasta la Vigilia de Pascua permanecerán silenciosas.',
-      recomendacion: 'Viva con especial devoción la Institución de la Eucaristía. Participe en el lavatorio de pies si es posible. Adore a Jesús en el Monumento durante la noche.',
+      recomendacion: 'Viva con devoción la Institución de la Eucaristía. Participe en el lavatorio de pies y adore a Jesús en el Monumento.',
       duracion: '6 horas'
     },
     6: {
       explicacion: 'Es la representación de la Sagrada Pasión del Señor que consta de cuatro grandes divisiones: I,II. Las primeras dos partes consisten en lecturas de las Escrituras y una oración, seguidas por la Pasión Según San Juan. En esta parte se preserva la forma de las primitivas reuniones de los Cristianos. III. La tercera parte consiste en el desvelamiento y adoración de la Cruz. Una Cruz velada se deja ver gradualmente, y por tres veces las palabras Venite adorémus llaman a los fieles a adorar de rodillas la Cruz. IV. La cuarta parte, la Comunión del Sacerdote y de los fieles. La liturgia muestra que no es una Misa, todos comulgan con hostias consagradas el día anterior.',
-      recomendacion: 'Guarde silencio y ayuno como signo de duelo. Participe con devoción en la adoración de la Cruz. Medite en el sufrimiento de Jesús por nuestra salvación.',
+      recomendacion: 'Guarde silencio y ayuno. Participe con devoción en la adoración de la Cruz y medite en el sufrimiento de Jesús.',
       duracion: '2 horas 30 minutos'
     },
     7: {
       explicacion: 'La Función Solemne de la Vigilia Pascual, tiene la intención de mostrar litúrgicamente cómo la vida y la gracia fluyen hacia nosotros a partir de la muerte de Nuestro Señor: la Luz del Mundo es exhibida bajo el símbolo del Cirio Pascual, que disipa la noche del pecado con la luz de la gracia. Las aguas del bautismo son bendecidas. La gracias que Él nos ha ganado, y en el Bautismo nos concedió, y la renovación de nuestras promesas bautismales anuncian públicamente nuestro propósito de plasmar en lo futuro estas nuevas en nuestra vida diaria; y, finalmente, se llama a la Iglesia Triunfante a interceder por nosotros.',
-      recomendacion: 'Viva con alegría y esperanza la Vigilia Pascual. Participe en la bendición del fuego y del agua. Renueve sus promesas bautismales con sinceridad.',
+      recomendacion: 'Viva con alegría la Vigilia Pascual. Participe en la bendición del fuego y renueve sus promesas bautismales.',
       duracion: '4 horas'
     },
     8: {
       explicacion: 'Día de Pascua de Resurrección o de Pascua Florida, es "el día que hizo el Señor", gocémonos y alegrémonos en él. La Iglesia da gracias a Dios porque con la victoria de su Hijo nos volvió a abrir el camino del cielo, rogándole secunde nuestros esfuerzos, para que podamos alcanzar el supremo bien que anhelamos. Regocijémonos todos en el Señor, sobre todo porque su triunfo y su Resurrección son también triunfo y resurrección nuestra, lo mismo que todos los misterios de su vida y de su muerte santísimas, en virtud del dogma consolador de la Comunión de los Santos.',
-      recomendacion: 'Viva con gozo y alegría la Resurrección del Señor. Participe con entusiasmo en la celebración eucarística. Comparta la buena noticia de la Resurrección.',
+      recomendacion: 'Viva con gozo la Resurrección del Señor. Participe con entusiasmo en la celebración y comparta la buena noticia.',
       duracion: '1 hora 40 minutos'
     }
   };
@@ -108,14 +108,14 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 z-30 p-2 bg-[#47575a]/60 hover:bg-[#47575a]/80 text-white rounded-full transition-all duration-300 backdrop-blur-sm"
+              className="absolute top-4 right-4 z-40 p-2 bg-[#47575a]/60 hover:bg-[#47575a]/80 text-white rounded-full transition-all duration-300 backdrop-blur-sm"
             >
               <X className="w-6 h-6" />
             </button>
 
             <div className="flex flex-col flex-1 min-h-0">
               {/* Image Section */}
-              <div className="w-full h-80 sm:h-96 lg:h-[450px] relative flex-shrink-0">
+              <div className="w-full h-54 sm:h-64 lg:h-[450px] relative flex-shrink-0">
                 {/* Exact same overlays as EventCard */}
                 <div className="absolute inset-0 bg-gradient-to-br to-black/5 z-10" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-[#47575a]/20 to-transparent z-20" />
@@ -125,7 +125,7 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
                   alt={evento.dia}
                   className="w-full h-full object-cover"
                   style={{ 
-                    objectPosition: '50% 20%',
+                    objectPosition: '50% 18%',
                     filter: 'contrast(1.1) saturate(1.2)'
                   }}
                 />
@@ -139,11 +139,11 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
                     className="bg-black/30 lg:bg-black/30 backdrop-blur-md rounded-xl p-3 sm:p-4 lg:p-4 border border-purple-500/20"
                   >
                     <h2 
-                      className="text-5xl sm:text-5xl lg:text-7xl text-purple-50/98 mb-3 sm:mb-3 lg:mb-3 tracking-wide"
+                      className="text-4xl sm:text-5xl lg:text-7xl text-purple-50/98 mb-3 sm:mb-3 lg:mb-3 tracking-wide"
                       style={{ 
                         fontFamily: 'Cormorant Garamond, serif',
-                        fontWeight: 400,
-                        textShadow: '0 0 40px rgba(139, 92, 246, 0.8), 0 0 80px rgba(139, 92, 246, 0.5)',
+                        fontWeight: 700,
+                        textShadow: '0 0 30px rgba(74, 85, 56, 0.5), 0 0 60px rgba(74, 85, 56, 0.3)',
                         letterSpacing: '0.05em'
                       }}
                     >
@@ -151,7 +151,7 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
                     </h2>
                     <div className="flex items-center gap-4 sm:gap-3 lg:gap-3 text-purple-200/90">
                       <Calendar className="w-7 h-7 sm:w-6 sm:h-6 lg:w-6 lg:h-6" />
-                      <p className="tracking-[0.2em] uppercase text-xl sm:text-lg lg:text-lg font-medium" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500 }}>
+                      <p className="tracking-[0.2em] uppercase text-lg sm:text-base lg:text-lg font-medium" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500 }}>
                         {evento.fecha}
                       </p>
                     </div>
@@ -168,7 +168,7 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.4 }}
-                    className="bg-gradient-to-r from-[#4a5f63]/30 to-[#47575a]/20 border-l-4 border-[#c3aa85] rounded-lg p-6 sm:p-4 lg:p-4 max-w-none"
+                    className="bg-gradient-to-r from-[#c3aa85]/40 to-[#e8dcc0]/50 border-l-4 border-[#4a5538] rounded-lg p-6 sm:p-4 lg:p-4 max-w-none"
                   >
                     <div className="flex items-start gap-4">
                       <svg className="w-6 h-6 sm:w-4 sm:h-4 lg:w-4 lg:h-4 text-[#4a5538] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -178,26 +178,6 @@ export function ImageModal({ isOpen, onClose, evento }: ImageModalProps) {
                         <p className="text-lg sm:text-base lg:text-base uppercase tracking-wider opacity-90 mb-3 text-[#2a3a3a] font-semibold">Significado litúrgico</p>
                         <p className="text-lg sm:text-base lg:text-base leading-relaxed text-[#1a2a2a] font-medium" style={{ lineHeight: '1.8' }}>
                           {details.explicacion}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Preparación Espiritual */}
-                  <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.5 }}
-                    className="bg-gradient-to-r from-[#c3aa85]/40 to-[#e8dcc0]/50 border-l-4 border-[#4a5538] rounded-lg p-6 sm:p-4 lg:p-4 max-w-none"
-                  >
-                    <div className="flex items-start gap-4">
-                      <svg className="w-6 h-6 sm:w-4 sm:h-4 lg:w-4 lg:h-4 text-[#4a5538] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                      </svg>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-lg sm:text-base lg:text-base uppercase tracking-wider opacity-90 mb-3 text-[#2a3a3a] font-semibold">Preparación espiritual</p>
-                        <p className="text-lg sm:text-base lg:text-base leading-relaxed text-[#1a2a2a] font-medium" style={{ lineHeight: '1.8' }}>
-                          {details.recomendacion}
                         </p>
                       </div>
                     </div>
