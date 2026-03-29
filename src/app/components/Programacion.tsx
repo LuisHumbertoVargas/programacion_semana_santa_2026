@@ -207,55 +207,7 @@ export function Programacion() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => {
-                  const now = new Date();
-                  const currentHour = now.getHours();
-                  const currentDay = now.getDay();
-                  
-                  // Check if it's a celebration day and time based on actual event schedules (15 minutes before)
-                  const isCelebrationTime = (
-                    (currentDay === 0 && currentHour >= 7 && currentHour < 12) || // Domingo: 7:45 AM - 12:00 PM (15 min antes de 8:00 AM)
-                    (currentDay >= 1 && currentDay <= 3 && currentHour >= 7 && currentHour < 11) || // Lunes a Miércoles: 7:45 AM - 11:00 AM (15 min antes de 8:00 AM)
-                    (currentDay === 4 && currentHour >= 17 && currentHour < 23) || // Jueves: 5:45 PM - 11:00 PM (15 min antes de 6:00 PM)
-                    (currentDay === 5 && (currentHour >= 8 && currentHour < 11 || currentHour === 14)) || // Viernes: 8:45 AM - 11:00 AM y 2:45 PM - 3:00 PM
-                    (currentDay === 6 && (currentHour >= 8 && currentHour < 11 || currentHour >= 20)) // Sábado: 8:45 AM - 11:00 AM y 8:45 PM - 11:00 PM
-                  );
-                  
-                  if (isCelebrationTime) {
-                    window.open('https://meet.google.com/qum-tvuu-apt', '_blank');
-                  } else {
-                    // Show custom alert instead of browser alert
-                    const customAlert = document.createElement('div');
-                    customAlert.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm';
-                    customAlert.innerHTML = `
-                      <div class="bg-white rounded-2xl p-10 max-w-lg mx-4 shadow-2xl">
-                        <div class="text-center">
-                          <div class="w-20 h-20 bg-gradient-to-br from-[#4a5538] to-[#5e6a53] rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                            </svg>
-                          </div>
-                          <h3 class="text-2xl font-bold text-[#2a3a3a] mb-4" style="font-family: 'Cormorant Garamond, serif'; font-weight: 700">Transmisión no disponible</h3>
-                          <p class="text-gray-700 mb-8 text-xl font-semibold" style="font-family: 'Inter, sans-serif'; font-weight: 500">
-                            La transmisión en vivo está disponible únicamente durante los horarios de celebración litúrgica.
-                          </p>
-                          <button id="closeAlertBtn" class="bg-[#4a5538] text-white px-8 py-3 rounded-lg hover:bg-[#5e6a53] transition-colors font-bold text-xl" style="font-family: 'Inter, sans-serif'; font-weight: 600">
-                            Entendido
-                          </button>
-                        </div>
-                      </div>
-                    `;
-                    document.body.appendChild(customAlert);
-                    
-                    // Add event listener to close alert safely
-                    const closeBtn = document.getElementById('closeAlertBtn');
-                    if (closeBtn) {
-                      closeBtn.addEventListener('click', () => {
-                        if (customAlert && customAlert.parentNode) {
-                          customAlert.parentNode.removeChild(customAlert);
-                        }
-                      });
-                    }
-                  }
+                  window.open('https://meet.google.com/qum-tvuu-apt', '_blank');
                 }}
                 className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white py-3 sm:py-3 px-6 sm:px-8 rounded-2xl transition-all duration-500 flex items-center justify-center gap-3 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-black/30 text-sm sm:text-base"
               >
