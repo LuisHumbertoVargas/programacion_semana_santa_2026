@@ -116,7 +116,7 @@ const eventos = [
     fecha: '05 de Abril',
     descripcion: 'Celebramos con júbilo la victoria de Cristo sobre la muerte, proclamando su resurrección como fuente de esperanza y vida nueva para toda la humanidad redimida.',
     horarios: [
-      { hora: '9:00 AM', actividades: ['Santa Misa del día de Resurrección'] }
+      { hora: '10:00 AM', actividades: ['Santa Misa del día de Resurrección'] }
     ],
     imagen: domingo_de_resurreccion,
     icono: Sun,
