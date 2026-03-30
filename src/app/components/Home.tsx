@@ -128,19 +128,27 @@ export function Home() {
             className="w-20 h-[1px] bg-[#4a5538]/50 mx-auto mb-10 lg:mb-0 xl:mb-0"
           />
 
-          {/* CTA Button */}
-          <motion.button
+          {/* Buttons Container */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.4 }}
-            whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(74, 85, 56, 0.4)' }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => navigate('/programacion')}
-            className="px-12 py-4 lg:px-14 lg:py-5 border border-[#4a5538]/50 rounded-md bg-[#4a5f63]/40 backdrop-blur-md text-white hover:bg-[#4a5f63]/50 hover:border-[#4a5538]/60 transition-all duration-500 tracking-[0.25em] uppercase font-semibold"
-            style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '0.9rem' }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="mt-2 flex flex-col sm:flex-row gap-4 items-center justify-center"
           >
-            Ver Programación
-          </motion.button>
+            {/* CTA Button */}
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.4 }}
+              whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(74, 85, 56, 0.4)' }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => navigate('/programacion')}
+              className="px-12 py-4 lg:px-14 lg:py-5 border border-[#4a5538]/50 rounded-md bg-[#4a5f63]/40 backdrop-blur-md text-white hover:bg-[#4a5f63]/50 hover:border-[#4a5538]/60 transition-all duration-500 tracking-[0.25em] uppercase font-semibold"
+              style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '0.9rem' }}
+            >
+              Ver Programación
+            </motion.button>
+          </motion.div>
 
           {/* Scroll Indicator */}
           <motion.div
